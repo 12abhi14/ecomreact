@@ -22,7 +22,7 @@ export const Signup  = () => {
         // console.log(fullName,email,password);
             signInWithEmailAndPassword(auth,email,password).then((credentials)=>{
             console.log(credentials);
-            doc('users').doc(credentials.user.uid).set({
+            db.collection('users').doc(credentials.user.uid).set({
                 FullName:fullName,
                 Email:email,
                 Password:password
